@@ -131,15 +131,12 @@ Formato imperativo con prefijo:
 
 ## Integrantes
 
-| Nombre | Paradigma a cargo | Usuario de GitHub |
-|--------|-------------------|-------------------|
-| _Nombre 1_ | Orientado a Objetos | _@usuario_ |
-| _Nombre 2_ | Estructurado | _@usuario_ |
-| _Nombre 3_ | Orientado a Eventos | _@usuario_ |
-| _Nombre 4_ | Declarativo | _@usuario_ |
-| _Nombre 5_ | Funcional | _@usuario_ |
-
-> Completar con los datos reales del equipo.
+| Nombre             | Paradigma a cargo |
+|--------------------|-------------------|
+| _PETER CARVAJAL_   | Orientado a Objetos |
+| _ALEJANDRO OSPINA_ | Estructurado |
+| _SOFIA MURILLO_    | Orientado a Eventos |
+| _SAMUEL VELAZQUEZ_ | Declarativo |
 
 ## Análisis comparativo de paradigmas
 
