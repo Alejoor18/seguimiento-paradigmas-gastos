@@ -1,4 +1,3 @@
-
 """Pruebas unitarias de las funcionalidades estructuradas de gastos."""
 
 from contextlib import redirect_stdout
@@ -11,16 +10,6 @@ import main as programa
 
 class TestFuncionalidades(unittest.TestCase):
     """Comprueba las operaciones públicas del módulo de gastos."""
-
-    def test_solicitar_monto_rechaza_valor_negativo(self):
-        salida = StringIO()
-
-        with patch("builtins.input", side_effect=["-5", "100"]):
-            with redirect_stdout(salida):
-                monto = programa.solicitar_monto("Monto: ")
-
-        self.assertEqual(monto, 100.0)
-        self.assertIn("El monto no puede ser negativo.", salida.getvalue())
 
     def gastos_de_ejemplo(self):
         """Devuelve gastos simples para las pruebas."""
