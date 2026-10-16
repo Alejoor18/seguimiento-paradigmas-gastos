@@ -51,19 +51,23 @@ public final class OperacionesGastos {
         );
     }
 
-    // 6. Buscar por concepto ignorando mayúsculas.
-    public static List<Gasto> buscarPorConcepto(
-            List<Gasto> gastos, String concepto) {
+// 6. Buscar por concepto ignorando mayúsculas.
+public static List<Gasto> buscarPorConcepto(
+        List<Gasto> gastos, String concepto) {
 
-        String criterio = concepto.toLowerCase(Locale.ROOT);
-
-        return filtrar(
-            gastos,
-            gasto -> gasto.concepto()
-                .toLowerCase(Locale.ROOT)
-                .contains(criterio)
-        );
+    if (concepto == null || concepto.isBlank()) {
+        return List.of();
     }
+
+    String criterio = concepto.strip().toLowerCase(Locale.ROOT);
+
+    return filtrar(
+        gastos,
+        gasto -> gasto.concepto()
+            .toLowerCase(Locale.ROOT)
+            .contains(criterio)
+    );
+}
 
     // Función de orden superior: recibe un criterio.
     public static List<Gasto> filtrar(
