@@ -99,9 +99,12 @@ def buscar_gastos_por_concepto(gastos, texto):
     return encontrados
 
 
+
 def mostrar_menu():
     """Imprime las opciones disponibles."""
-    print("\n=== CONTROL DE GASTOS PERSONALES ===")
+    print("\n" + "=" * 40)
+    print("       CONTROL DE GASTOS PERSONALES")
+    print("=" * 40)
     print("1. Registrar gasto")
     print("2. Mostrar todos los gastos")
     print("3. Calcular gasto total acumulado")
@@ -109,6 +112,8 @@ def mostrar_menu():
     print("5. Filtrar gastos por monto")
     print("6. Buscar gasto por concepto")
     print("0. Salir")
+    print("=" * 40)
+
 
 
 def main():
