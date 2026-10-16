@@ -172,5 +172,3 @@ Al finalizar las implementaciones, se documentarán las diferencias observadas e
 *El Gran Libro de NodeJS*
 _Autores:Gascon Gonzalez, Eulises_
 Capitulo: 3
-
-La referencia bibliográfica completa deberá incluir los datos de autoría, edición, editorial y año de publicación correspondientes al ejemplar consultado.
