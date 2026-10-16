@@ -25,11 +25,10 @@ Categorías iniciales: `ALIMENTACION`, `TRANSPORTE`, `SERVICIOS` y `ENTRETENIMIE
 
 | Paradigma | Rama | Estado |
 |---|---|---|
-| Estructurado | `feature/paradigma-estructurado` | En desarrollo |
+| Estructurado | `feature/paradigma-estructurado` | Implementado |
 | Orientado a Objetos (POO) | `feature/paradigma-poo` | Implementado |
-| Orientado a Eventos (GUI) | `feature/paradigma-eventos` | Pendiente |
-| Declarativo (SQL) | `feature/paradigma-declarativo` | Pendiente |
-| Funcional | `feature/paradigma-funcional` | Pendiente |
+| Declarativo (SQL) | `feature/paradigma-declarativo` | Implementado |
+| Funcional | `feature/paradigma-funcional` | Implementado |
 
 Los estados deben actualizarse a medida que cada implementación se complete, pruebe e integre en `develop`.
 
@@ -147,11 +146,11 @@ docs: actualiza la documentación del proyecto
 
 ## Integrantes y distribución del trabajo
 
-| Integrante | Paradigma asignado |
+| Integrante | Paradigma asignado | 
 |---|---|
 | Peter Carvajal | Orientado a Objetos |
 | Alejandro Ospina | Estructurado |
-| Sofía Murillo | Orientado a Eventos |
+| Sofía Murillo | Funcional |
 | Samuel Velázquez | Declarativo |
 
 La distribución indicada corresponde a las responsabilidades asignadas al equipo. El historial de commits y los Pull Requests permitirán evidenciar las contribuciones individuales.
@@ -170,5 +169,8 @@ Al finalizar las implementaciones, se documentarán las diferencias observadas e
 ## Referencias bibliográficas
 
 *Programming Languages: Principles and Paradigms*. Consulta de los capítulos 12, 13, 14, 15 y 16.
+*El Gran Libro de NodeJS*
+_Autores:Gascon Gonzalez, Eulises_
+Capitulo: 3
 
 La referencia bibliográfica completa deberá incluir los datos de autoría, edición, editorial y año de publicación correspondientes al ejemplar consultado.
