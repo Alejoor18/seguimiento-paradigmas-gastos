@@ -1,65 +1,65 @@
-# seguimiento-paradigmas-gastos
+# Seguimiento de Paradigmas de Programación
+
 Sistema de control de gastos personales implementado mediante diferentes paradigmas de programación, aplicando trabajo colaborativo con Git y GitHub.
-
-<b> Paradigma de  POO</b><br>
-#SeguimientoParadigmas: Sistema de Control de Gastos Personales
-
-Actividad de seguimiento en **Java** que resuelve un mismo problema (gestión de gastos personales) aplicando distintos paradigmas de programación, con trabajo colaborativo mediante **Git y GitHub**.
 
 ## Objetivo
 
-Analizar, diseñar e implementar una misma solución de software con los paradigmas Estructurado, Orientado a Objetos, Orientado a Eventos, Declarativo y Funcional, comparando sus características, ventajas y diferencias, y aplicando buenas prácticas de control de versiones (feature branching, Pull Requests y code review).
+Analizar, diseñar e implementar una solución de software para la gestión de gastos personales mediante los paradigmas estructurado, orientado a objetos, orientado a eventos, declarativo y funcional, comparando sus características, ventajas y diferencias mediante un mismo problema práctico.
+
+La actividad también aplica buenas prácticas de control de versiones, como el uso de ramas, commits descriptivos, Pull Requests y revisión de código.
 
 ## Funcionalidades
 
-Todas las versiones implementan las mismas 6 funcionalidades:
+Todas las implementaciones deben contemplar las siguientes seis funcionalidades:
 
-1. **Registrar gasto:** captura categoría, concepto (descripción) y monto ($).
-2. **Mostrar listado de gastos:** presenta todos los gastos registrados.
-3. **Calcular gasto total acumulado:** suma el monto de todos los gastos.
-4. **Mostrar el gasto de mayor valor:** muestra el registro con el monto más alto.
-5. **Mostrar gastos mayores a un monto:** filtra los gastos que superan un umbral ingresado.
-6. **Buscar gasto por concepto:** busca por subcadena en la descripción (sin distinguir mayúsculas).
+1. **Registrar gasto:** capturar la categoría, la descripción y el monto.
+2. **Mostrar listado de gastos:** presentar todos los gastos registrados.
+3. **Calcular gasto total acumulado:** sumar los montos de los gastos.
+4. **Mostrar el gasto de mayor valor:** identificar el gasto con el monto más alto.
+5. **Filtrar gastos por monto:** mostrar los gastos que superen un umbral especificado.
+6. **Buscar gasto por concepto:** localizar gastos cuya descripción contenga una palabra o subcadena, sin distinguir mayúsculas y minúsculas.
 
-Categorías disponibles: `ALIMENTACION`, `TRANSPORTE`, `SERVICIOS`, `ENTRETENIMIENTO`.
+**Categorías iniciales:** `ALIMENTACION`, `TRANSPORTE`, `SERVICIOS` y `ENTRETENIMIENTO`.
 
 ## Paradigmas y ramas
 
 | Paradigma | Rama | Estado |
-|-----------|------|--------|
-| Estructurado | `feature/paradigma-estructurado` | Pendiente |
+|---|---|---|
+| Estructurado | `feature/paradigma-estructurado` | Implementado |
 | Orientado a Objetos (POO) | `feature/paradigma-poo` | Implementado |
-| Orientado a Eventos (GUI) | `feature/paradigma-eventos` | Pendiente |
-| Declarativo (SQL) | `feature/paradigma-declarativo` | Pendiente |
-| Funcional | `feature/paradigma-funcional` | Pendiente |
+| Declarativo (SQL) | `feature/paradigma-declarativo` | Implementado |
+| Funcional | `feature/paradigma-funcional` | Implementado |
 
-> Actualizar la columna *Estado* a medida que se integren las ramas a `develop`.
+Los estados deben actualizarse a medida que cada implementación se complete, pruebe e integre en `develop`.
 
-## Paradigma Orientado a Objetos (rama `feature/paradigma-poo`)
+## Paradigma orientado a objetos (POO)
+
+La implementación del paradigma orientado a objetos se desarrolla en la rama `feature/paradigma-poo` mediante clases, objetos, encapsulamiento y composición.
 
 ### Conceptos aplicados
 
-- **Clases e instanciación de objetos:** cada gasto es un objeto `RegistroGasto`.
-- **Encapsulamiento:** atributos `private` con getters y setters que validan los datos (categoría no nula, descripción no vacía, monto finito y mayor que cero).
-- **Composición:** `GestorGastos` *tiene* una lista de `RegistroGasto` y es el único que la modifica.
-- **Métodos de instancia:** agregar, listar, calcular total, obtener el mayor, filtrar y buscar.
-- **Enumeración:** `Categoria` evita valores inválidos de categoría.
+- **Clases e instanciación:** cada gasto se representa mediante un objeto de la clase `RegistroGasto`.
+- **Encapsulamiento:** los atributos se declaran privados y se accede a ellos mediante getters y setters.
+- **Validación:** se verifica que la categoría sea válida, la descripción no esté vacía y el monto sea finito y mayor que cero.
+- **Composición:** `GestorGastos` administra una colección de objetos `RegistroGasto`.
+- **Métodos de instancia:** se implementan operaciones para registrar, listar, calcular totales, obtener el gasto de mayor valor, filtrar y buscar gastos.
+- **Enumeraciones:** `Categoria` define las categorías permitidas.
 
-### Clases
+### Clases principales
 
 | Clase | Responsabilidad |
-|-------|-----------------|
-| `Categoria` (enum) | Define las categorías permitidas. |
-| `RegistroGasto` | Representa un gasto con categoría, descripción y monto encapsulados. |
-| `GestorGastos` | Administra la colección de gastos y contiene la lógica de las 6 funcionalidades. |
-| `Main` | Menú interactivo en consola; solo interactúa con el usuario y delega la lógica al gestor. |
+|---|---|
+| `Categoria` | Enumeración de las categorías de gastos permitidas. |
+| `RegistroGasto` | Representa un gasto individual con sus atributos encapsulados. |
+| `GestorGastos` | Administra la colección de gastos y ejecuta las operaciones requeridas. |
+| `Main` | Presenta el menú de consola, recibe las entradas del usuario y delega las operaciones al gestor. |
 
-## Estructura del proyecto
+### Estructura del proyecto POO
 
-```
-seguimiento-paradigmas-gastos
-├── src
-│   ├── clases
+```text
+seguimiento-paradigmas-gastos/
+├── src/
+│   ├── clases/
 │   │   ├── Categoria.java
 │   │   ├── RegistroGasto.java
 │   │   └── GestorGastos.java
@@ -68,80 +68,105 @@ seguimiento-paradigmas-gastos
 └── README.md
 ```
 
-## Requisitos
+Esta estructura corresponde a la implementación POO. Las demás implementaciones pueden organizarse en carpetas o paquetes independientes, de acuerdo con las decisiones del equipo.
 
-- JDK 17 o superior (el código usa *text blocks* y `switch` con flechas).
-- IntelliJ IDEA (recomendado) o cualquier IDE/terminal con `javac`.
+## Tecnologías
 
-## Cómo ejecutar
+- Java.
+- JDK 17 o superior para la implementación descrita.
+- Git para el control de versiones.
+- GitHub para el alojamiento del repositorio y la colaboración.
+- IntelliJ IDEA o cualquier entorno compatible con Java.
+
+## Ejecución de la implementación POO
 
 ### Desde IntelliJ IDEA
 
-1. Abrir la carpeta del proyecto.
-2. Verificar que `src` esté marcada como *Sources Root* (clic derecho → Mark Directory as → Sources Root).
-3. Ejecutar la clase `Main`.
+1. Abrir el proyecto.
+2. Verificar que `src` esté configurada como carpeta de código fuente (*Sources Root*).
+3. Comprobar que los archivos tengan las declaraciones de paquete correspondientes.
+4. Ejecutar la clase `Main`.
 
 ### Desde la terminal
 
+Desde la raíz del proyecto, ejecutar:
+
 ```bash
-# En la raíz del proyecto
 javac -d out src/clases/*.java src/Main.java
 java -cp out Main
 ```
 
-## Ejemplo de uso
+Este procedimiento supone que los archivos están ubicados en las rutas indicadas y que la clase principal se llama `Main`.
 
-```
+### Ejemplo del menú de consola
+
+```text
 =============================
-Buenos Días, ¿Qué desea Hacer?
+Sistema de Control de Gastos
 =============================
 
-1. Registrar Gasto
-2. Mostrar lista de Gastos
+1. Registrar gasto
+2. Mostrar lista de gastos
 3. Calcular gasto total acumulado
 4. Mostrar el gasto de mayor valor
-5. Mostrar los gastos mayores a: X
+5. Mostrar gastos mayores a un monto
 6. Buscar gasto por concepto
-0. Salir
+7. Salir
 ```
 
-## Flujo de trabajo con Git
+## Estructura de trabajo con Git y GitHub
 
-```
-main (producción) ------------------------------------------> [Tag v1.0]
-       \                                                  /
-develop (integración) ------------------------------------
-       \              \              \              \
-        feature/...   feature/...    feature/...    feature/...
-```
+El proyecto utiliza un flujo de trabajo basado en ramas para separar las implementaciones y facilitar su revisión e integración.
 
-- `main`: código estable y listo para la entrega final.
-- `develop`: rama de integración donde convergen las funcionalidades terminadas.
-- `feature/*`: una rama por paradigma, creada a partir de `develop`.
-- La integración `feature/*` → `develop` se hace **solo mediante Pull Request**, con la aprobación de al menos otro integrante.
+- `main`: contiene la versión estable y final del proyecto.
+- `develop`: integra las funcionalidades completadas y revisadas.
+- Ramas `feature/*`: permiten desarrollar cada paradigma de manera independiente.
+
+Las ramas de funcionalidad deben crearse a partir de `develop`. La integración de cada rama en `develop` debe realizarse mediante un Pull Request, con revisión y aprobación de otro integrante.
+
+Cuando todas las funcionalidades estén integradas y verificadas, se preparará la versión final en `main` y se identificará con la etiqueta `v1.0`.
 
 ### Convención de commits
 
-Formato imperativo con prefijo:
+Se emplearán mensajes claros, descriptivos e imperativos, acompañados de prefijos según el tipo de cambio:
 
-- `feat:` nueva funcionalidad (ej. `feat: agrega clase GestorGastos en POO`)
-- `fix:` corrección de errores (ej. `fix: corrige validación del monto`)
-- `docs:` documentación (ej. `docs: actualiza README`)
-- `refactor:` mejora interna sin cambiar el comportamiento
+- `feat:` incorpora una funcionalidad.
+- `fix:` corrige un error.
+- `docs:` modifica la documentación.
+- `refactor:` mejora la estructura interna sin cambiar el comportamiento esperado.
+- `test:` incorpora o modifica pruebas.
 
-## Integrantes
+Ejemplos:
 
-| Nombre             | Paradigma a cargo |
-|--------------------|-------------------|
-| _PETER CARVAJAL_   | Orientado a Objetos |
-| _ALEJANDRO OSPINA_ | Estructurado |
-| _SOFIA MURILLO_    | Orientado a Eventos |
-| _SAMUEL VELAZQUEZ_ | Declarativo |
+```text
+feat: agrega la clase GestorGastos en POO
+fix: corrige la búsqueda por concepto
+docs: actualiza la documentación del proyecto
+```
+
+## Integrantes y distribución del trabajo
+
+| Integrante | Paradigma asignado |
+|---|---|
+| Peter Carvajal | Orientado a Objetos |
+| Alejandro Ospina | Estructurado |
+| Sofía Murillo | Funcional |
+| Samuel Velázquez | Declarativo |
+
+La distribución indicada corresponde a las responsabilidades asignadas al equipo. El historial de commits y los Pull Requests permitirán evidenciar las contribuciones individuales.
 
 ## Análisis comparativo de paradigmas
 
-_Completar al finalizar todas las ramas: ventajas, desventajas y diferencias observadas entre los paradigmas al resolver el mismo problema._
+Al finalizar las implementaciones, se documentarán las diferencias observadas entre los paradigmas, considerando:
+
+- Organización y legibilidad del código.
+- Separación de responsabilidades.
+- Gestión y transformación de los datos.
+- Facilidad de mantenimiento y ampliación.
+- Ventajas y limitaciones de cada enfoque.
+- Adecuación de cada paradigma al problema de gestión de gastos personales.
 
 ## Referencias bibliográficas
 
-_Programming languages : principles and paradigms → Capitulos:12,13,14,15,16._
+- *Programming Languages: Principles and Paradigms.* Consulta de los capítulos 12, 13, 14, 15 y 16.
+- *El Gran Libro de NodeJS.* Autores: Gascon Gonzalez, Eulises. Capítulo: 3.
